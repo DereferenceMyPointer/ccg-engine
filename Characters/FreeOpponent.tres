@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="FreeOpponent" load_steps=6 format=3 uid="uid://cjgx0vs3x73mn"]
+
+[ext_resource type="Script" uid="uid://2g1x3kra3kn3" path="res://Scripts/Card/CardData.gd" id="1_aejun"]
+[ext_resource type="Script" uid="uid://e5vm0kiq18ff" path="res://Scripts/FreeOpponent.gd" id="2_1n524"]
+[ext_resource type="Resource" uid="uid://dbl2w0bn6irik" path="res://Cards/Base Set/Azealea.tres" id="2_uo5ax"]
+[ext_resource type="Script" uid="uid://ba7rx7evbi1ai" path="res://Scripts/Card/Deck.gd" id="3_uo5ax"]
+
+[sub_resource type="Resource" id="Resource_267vo"]
+script = ExtResource("3_uo5ax")
+main = Array[ExtResource("1_aejun")]([ExtResource("2_uo5ax"), ExtResource("2_uo5ax"), ExtResource("2_uo5ax"), ExtResource("2_uo5ax"), ExtResource("2_uo5ax")])
+metadata/_custom_type_script = "uid://ba7rx7evbi1ai"
+
+[resource]
+script = ExtResource("2_1n524")
+deck = SubResource("Resource_267vo")
+metadata/_custom_type_script = "uid://e5vm0kiq18ff"

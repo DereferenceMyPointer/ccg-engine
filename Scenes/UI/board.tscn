@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://pfu3mlww7ex6"]
+
+[ext_resource type="Script" uid="uid://rm6ba8u41des" path="res://Scripts/UI/Game/BoardUI.gd" id="1_xn8tv"]
+[ext_resource type="Script" uid="uid://lxt3p65t583k" path="res://Scripts/UI/Game/CardContainer.gd" id="2_col40"]
+[ext_resource type="PackedScene" uid="uid://42hlngkppsd3" path="res://Scenes/UI/card_ui.tscn" id="2_xn8tv"]
+[ext_resource type="PackedScene" uid="uid://dfubhll707xkj" path="res://Scenes/UI/hand_ui.tscn" id="3_col40"]
+
+[node name="Board" type="Node2D" node_paths=PackedStringArray("player_hand", "opponent_hands", "fields")]
+script = ExtResource("1_xn8tv")
+player_hand = NodePath("HandUI")
+opponent_hands = [NodePath("OppHand")]
+fields = [NodePath("PlayerField"), NodePath("OppField")]
+metadata/_custom_type_script = "uid://rm6ba8u41des"
+
+[node name="OppHand" type="Container" parent="." node_paths=PackedStringArray("default_spawn")]
+offset_right = 1920.0
+offset_bottom = 99.0
+script = ExtResource("2_col40")
+flip = true
+max_card_rotation = -20.0
+vertical_scale = -8
+card_ui = ExtResource("2_xn8tv")
+default_spawn = NodePath("../Marker2D4")
+metadata/_custom_type_script = "uid://lxt3p65t583k"
+
+[node name="Marker2D4" type="Marker2D" parent="."]
+position = Vector2(-209, -2)
+
+[node name="OppField" type="Container" parent="." node_paths=PackedStringArray("default_spawn")]
+offset_top = 94.0
+offset_right = 1920.0
+offset_bottom = 595.0
+script = ExtResource("2_col40")
+zone = 1
+max_card_rotation = 0.0
+maximum_separation = 256
+vertical_scale = 0
+rows = 2
+card_ui = ExtResource("2_xn8tv")
+default_spawn = NodePath("../Marker2D3")
+metadata/_custom_type_script = "uid://lxt3p65t583k"
+
+[node name="Marker2D3" type="Marker2D" parent="."]
+position = Vector2(974, 604)
+
+[node name="PlayerField" type="Container" parent="." node_paths=PackedStringArray("default_spawn")]
+offset_top = 600.0
+offset_right = 1920.0
+offset_bottom = 1101.0
+script = ExtResource("2_col40")
+zone = 1
+max_card_rotation = 0.0
+maximum_separation = 256
+vertical_scale = 0
+rows = 2
+card_ui = ExtResource("2_xn8tv")
+default_spawn = NodePath("../Marker2D2")
+metadata/_custom_type_script = "uid://lxt3p65t583k"
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(974, 604)
+
+[node name="HandUI" parent="." node_paths=PackedStringArray("default_spawn") instance=ExtResource("3_col40")]
+offset_top = 1027.0
+offset_bottom = 1340.0
+card_ui = ExtResource("2_xn8tv")
+default_spawn = NodePath("../Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(2123, 1181)

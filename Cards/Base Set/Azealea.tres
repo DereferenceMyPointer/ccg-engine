@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://dbl2w0bn6irik"]
+
+[ext_resource type="Texture2D" uid="uid://cchjmuhoqhqnt" path="res://Dragon.png" id="1_e34f6"]
+[ext_resource type="Script" uid="uid://2g1x3kra3kn3" path="res://Scripts/Card/CardData.gd" id="1_ldv10"]
+
+[resource]
+script = ExtResource("1_ldv10")
+title = "[color=green]Azealea Borealis[/color]"
+cost = 1
+power = 1
+defense = 2
+text = "When Summoned: Add a Borealis Ephemeral card from your Deck or Banishment to your hand.
+1 Action: Return this card to your hand, then summon a Borealis Minion with a different name from your hand.
+Use each of these effects once per turn."
+image = ExtResource("1_e34f6")
+effects = Dictionary[int, Array]({})
+metadata/_custom_type_script = "uid://2g1x3kra3kn3"

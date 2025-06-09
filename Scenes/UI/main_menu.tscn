@@ -1,0 +1,104 @@
+[gd_scene load_steps=9 format=3 uid="uid://dselsqf6cy2yb"]
+
+[ext_resource type="Texture2D" uid="uid://drg02krp4fjs" path="res://CardBase.png" id="1_5wsvm"]
+[ext_resource type="PackedScene" uid="uid://42hlngkppsd3" path="res://Scenes/UI/card_ui.tscn" id="2_o14dv"]
+[ext_resource type="Resource" uid="uid://dbl2w0bn6irik" path="res://Cards/Base Set/Azealea.tres" id="3_u7lva"]
+[ext_resource type="Script" uid="uid://cg2fgag3a6m7u" path="res://Scenes/UI/CollectionTabButton.gd" id="4_k33u3"]
+[ext_resource type="Script" uid="uid://cjy1t8flv1fbf" path="res://Scripts/UI/DebugGameButton.gd" id="4_u7lva"]
+[ext_resource type="Resource" uid="uid://cjgx0vs3x73mn" path="res://Characters/FreeOpponent.tres" id="5_4pqbp"]
+[ext_resource type="PackedScene" uid="uid://b0m43qvcpxi0s" path="res://Scenes/Game/game_player.tscn" id="6_gih0s"]
+[ext_resource type="Resource" uid="uid://lcglyydreoho" path="res://Characters/DefaultPlayer.tres" id="7_gih0s"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -379.0
+offset_top = -92.0
+offset_right = 379.0
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 200
+alignment = 1
+
+[node name="BoxContainer" type="BoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/BoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_5wsvm")
+expand_mode = 3
+
+[node name="CardUI" parent="HBoxContainer/BoxContainer" instance=ExtResource("2_o14dv")]
+position = Vector2(221, 307.5)
+scale = Vector2(2, 2)
+referenced_card = ExtResource("3_u7lva")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "Start Game"
+
+[node name="Button2" type="Button" parent="HBoxContainer/VBoxContainer" node_paths=PackedStringArray("root")]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "Collection
+"
+script = ExtResource("4_k33u3")
+root = NodePath("../../..")
+
+[node name="Button3" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "Settings
+"
+
+[node name="Button4" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "Quit
+"
+
+[node name="Button5" type="Button" parent="HBoxContainer/VBoxContainer" node_paths=PackedStringArray("root")]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "Test Game"
+script = ExtResource("4_u7lva")
+opponent = ExtResource("5_4pqbp")
+root = NodePath("../../..")
+game = ExtResource("6_gih0s")
+profile = ExtResource("7_gih0s")
+
+[node name="BoxContainer2" type="BoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/BoxContainer2"]
+layout_mode = 2
+texture = ExtResource("1_5wsvm")
+expand_mode = 3
+
+[node name="CardUI" parent="HBoxContainer/BoxContainer2" instance=ExtResource("2_o14dv")]
+position = Vector2(219, 307.5)
+scale = Vector2(2, 2)
+referenced_card = ExtResource("3_u7lva")
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Button5" to="HBoxContainer/VBoxContainer/Button5" method="_on_pressed"]

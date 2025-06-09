@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0m43qvcpxi0s"]
+
+[ext_resource type="Script" uid="uid://dkg6p2l6dwes0" path="res://Scripts/UI/Game/GamePlayer.gd" id="1_2wqa6"]
+[ext_resource type="Script" uid="uid://cnwimrih7ug77" path="res://Scripts/GameParams.gd" id="2_6a4g4"]
+[ext_resource type="PackedScene" uid="uid://pfu3mlww7ex6" path="res://Scenes/UI/board.tscn" id="2_mp5ug"]
+
+[sub_resource type="Resource" id="Resource_8p7rf"]
+script = ExtResource("2_6a4g4")
+start_hand_size = 7
+max_hand_size = 6
+turn_mana_available = Array[int]([3, 4, 4, 5])
+metadata/_custom_type_script = "uid://cnwimrih7ug77"
+
+[node name="GamePlayer" type="Node2D" node_paths=PackedStringArray("board")]
+script = ExtResource("1_2wqa6")
+board = NodePath("Board")
+mode = SubResource("Resource_8p7rf")
+metadata/_custom_type_script = "uid://dkg6p2l6dwes0"
+
+[node name="Board" parent="." instance=ExtResource("2_mp5ug")]

@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://wh0fpwrutpwy"]
+
+[ext_resource type="Script" uid="uid://bn6o6entfauph" path="res://Scripts/UI/ClickableArea.gd" id="1_3gqmn"]
+[ext_resource type="Texture2D" uid="uid://dy6r0p5vg7ji2" path="res://Plus.png" id="2_3gqmn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8k8i"]
+size = Vector2(263, 338)
+
+[node name="DeckSlot" type="Area2D"]
+script = ExtResource("1_3gqmn")
+metadata/_custom_type_script = "uid://bn6o6entfauph"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(131.5, 169)
+shape = SubResource("RectangleShape2D_w8k8i")
+
+[node name="Title" type="RichTextLabel" parent="."]
+offset_left = -96.0
+offset_top = 358.0
+offset_right = 359.0
+offset_bottom = 516.0
+theme_override_font_sizes/normal_font_size = 48
+text = "Add New"
+horizontal_alignment = 1
+
+[node name="Img" type="Sprite2D" parent="."]
+position = Vector2(131, 169)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_3gqmn")

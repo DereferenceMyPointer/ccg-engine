@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://4s8qw78axifs"]
+
+[ext_resource type="Script" uid="uid://dejxp0n4d6rcr" path="res://Scripts/UI/Collection/CollectionManager.gd" id="1_h5w1n"]
+[ext_resource type="Resource" uid="uid://lcglyydreoho" path="res://Characters/DefaultPlayer.tres" id="2_4xea8"]
+[ext_resource type="Script" uid="uid://u4qwjbij58ux" path="res://Scripts/UI/Collection/DeckSelectionView.gd" id="2_jybc2"]
+[ext_resource type="PackedScene" uid="uid://dt2ewlka8l4xx" path="res://Scenes/UI/deck_slot.tscn" id="3_s0e51"]
+[ext_resource type="PackedScene" uid="uid://wh0fpwrutpwy" path="res://Scenes/UI/new_deck_slot.tscn" id="5_gxmef"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cjmwr"]
+size = Vector2(1893, 1251)
+
+[node name="CollectionManager" type="Node2D"]
+script = ExtResource("1_h5w1n")
+default_profile = ExtResource("2_4xea8")
+
+[node name="Exit" type="Button" parent="."]
+offset_left = 45.0
+offset_top = 1175.0
+offset_right = 139.0
+offset_bottom = 1250.0
+theme_override_font_sizes/font_size = 48
+text = "Exit"
+
+[node name="DeckSelection" type="Area2D" parent="."]
+position = Vector2(27, 29)
+monitoring = false
+monitorable = false
+script = ExtResource("2_jybc2")
+deck_scene = ExtResource("3_s0e51")
+new_deck_scene = ExtResource("5_gxmef")
+metadata/_custom_type_script = "uid://u4qwjbij58ux"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeckSelection"]
+position = Vector2(946.5, 625.5)
+shape = SubResource("RectangleShape2D_cjmwr")
+
+[node name="DeckBuilder" type="Node2D" parent="."]
+
+[node name="Delete" type="Button" parent="DeckBuilder"]
+offset_left = 1735.0
+offset_top = 1184.0
+offset_right = 1893.0
+offset_bottom = 1259.0
+theme_override_font_sizes/font_size = 48
+text = "Delete
+"

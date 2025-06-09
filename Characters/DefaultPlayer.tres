@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="PlayerProfile" load_steps=6 format=3 uid="uid://lcglyydreoho"]
+
+[ext_resource type="Script" uid="uid://2g1x3kra3kn3" path="res://Scripts/Card/CardData.gd" id="1_jenhs"]
+[ext_resource type="Resource" uid="uid://dbl2w0bn6irik" path="res://Cards/Base Set/Azealea.tres" id="2_jenhs"]
+[ext_resource type="Script" uid="uid://b2mg8shrhv2cn" path="res://Scripts/PlayerProfile.gd" id="2_kande"]
+[ext_resource type="Script" uid="uid://ba7rx7evbi1ai" path="res://Scripts/Card/Deck.gd" id="3_m7m7s"]
+
+[sub_resource type="Resource" id="Resource_m7m7s"]
+script = ExtResource("3_m7m7s")
+main = Array[ExtResource("1_jenhs")]([ExtResource("2_jenhs"), ExtResource("2_jenhs"), ExtResource("2_jenhs"), ExtResource("2_jenhs"), ExtResource("2_jenhs"), ExtResource("2_jenhs"), ExtResource("2_jenhs"), ExtResource("2_jenhs"), ExtResource("2_jenhs"), ExtResource("2_jenhs"), ExtResource("2_jenhs"), ExtResource("2_jenhs"), ExtResource("2_jenhs"), ExtResource("2_jenhs"), ExtResource("2_jenhs")])
+title = "Deck"
+metadata/_custom_type_script = "uid://ba7rx7evbi1ai"
+
+[resource]
+script = ExtResource("2_kande")
+username = "Default"
+deck = SubResource("Resource_m7m7s")
+collection = Dictionary[ExtResource("1_jenhs"), int]({})
+decks = Array[ExtResource("3_m7m7s")]([])
+metadata/_custom_type_script = "uid://b2mg8shrhv2cn"

@@ -1,0 +1,92 @@
+[gd_scene load_steps=4 format=3 uid="uid://42hlngkppsd3"]
+
+[ext_resource type="Script" uid="uid://cs8m8yvbnkqva" path="res://Scripts/UI/Game/CardUI.gd" id="1_x05kw"]
+[ext_resource type="Texture2D" uid="uid://drg02krp4fjs" path="res://CardBase.png" id="2_ekcna"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x05kw"]
+size = Vector2(183, 257)
+
+[node name="CardUI" type="Area2D" node_paths=PackedStringArray("img")]
+physics_interpolation_mode = 2
+script = ExtResource("1_x05kw")
+img = NodePath("Container")
+metadata/_custom_type_script = "uid://cs8m8yvbnkqva"
+
+[node name="Container" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_ekcna")
+
+[node name="CardImage" type="TextureRect" parent="Container"]
+offset_left = -301.0
+offset_top = -407.0
+offset_right = 299.0
+offset_bottom = 53.0
+
+[node name="Title" type="RichTextLabel" parent="Container"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -676.0
+offset_top = -485.0
+offset_right = -77.0
+offset_bottom = -426.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0.517647, 0, 1)
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Cost" type="RichTextLabel" parent="Container"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -519.0
+offset_top = -488.0
+offset_right = -419.0
+offset_bottom = -388.0
+grow_horizontal = 0
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Description" type="RichTextLabel" parent="Container"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -695.0
+offset_top = -449.0
+offset_right = -53.0
+offset_bottom = -151.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+scroll_active = false
+
+[node name="PT" type="RichTextLabel" parent="Container"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -509.0
+offset_top = -657.0
+offset_right = -241.0
+offset_bottom = -525.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 72
+bbcode_enabled = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_x05kw")

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfubhll707xkj"]
+
+[ext_resource type="Script" uid="uid://d2ak6jocakyoq" path="res://Scripts/UI/Game/HandUI.gd" id="1_85qn2"]
+
+[node name="HandUI" type="Container"]
+physics_interpolation_mode = 0
+custom_minimum_size = Vector2(20, 20)
+offset_right = 1919.0
+offset_bottom = 313.0
+script = ExtResource("1_85qn2")
+metadata/_custom_type_script = "uid://d2ak6jocakyoq"

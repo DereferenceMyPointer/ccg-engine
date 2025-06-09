@@ -12,7 +12,8 @@ config_version=5
 
 config/name="CCG Engine"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/image="uid://bg8shqim3nxh3"
+config/icon="uid://c46vrcol2sscy"
 
 [display]
 
